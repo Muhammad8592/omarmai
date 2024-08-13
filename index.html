@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Launch Countdown</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+       body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            overflow: hidden;
+            background: linear-gradient(135deg, #00c6fb 0%, #005bea 100%);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .content {
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0 0 20px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        p {
+            font-size: 1em;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .time-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 2em;
+            color: #ffffff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            min-width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .time-label {
+            font-size: 0.8em;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .time {
+                font-size: 1.8em;
+                min-width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            p {
+                font-size: 0.9em;
+            }
+
+            .time {
+                font-size: 1.5em;
+                padding: 10px;
+                min-width: 45px;
+                height: 45px;
+            }
+
+            .time-label {
+                font-size: 0.7em;
+            }
+
+            #countdown {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 0.8em;
+            }
+
+            .time {
+                font-size: 1.2em;
+                padding: 8px;
+                min-width: 40px;
+                height: 40px;
+            }
+
+            .time-label {
+                font-size: 0.6em;
+            }
+
+            #countdown {
+                gap: 5px;
+            }
+        }
+
+        @media (max-width: 280px) {
+            .content {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.3em;
+            }
+
+            p {
+                font-size: 0.7em;
+            }
+
+            .time {
+                font-size: 1em;
+                padding: 6px;
+                min-width: 35px;
+                height: 35px;
+            }
+
+            .time-label {
+                font-size: 0.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>omarmine Launch Countdown</h1>
+            <p>Get ready for something extraordinary. Our revolutionary product is about to change everything!</p>
+            <div id="countdown">
+                <div class="time-container">
+                    <div class="time" id="days">00</div>
+                    <div class="time-label">Days</div>
+                </div>
+                <div class="time-container">
+                    <div class="time" id="hours">00</div>
+                    <div class="time-label">Hours</div>
+                </div>
+                <div class="time-container">
+                    <div class="time" id="minutes">00</div>
+                    <div class="time-label">Minutes</div>
+                </div>
+                <div class="time-container">
+                    <div class="time" id="seconds">00</div>
+                    <div class="time-label">Seconds</div>
+                </div>
+            </div>
+            <p>Stay connected! Follow us on <a href="#" target="_blank">Social Media</a> for exclusive updates and sneak peeks.</p>
+        </div>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        const launchDate = new Date("2024-12-31T23:59:59").getTime();
+
+        // Update the count down every 1 second
+        const x = setInterval(function() {
+            // Get current date and time
+            const now = new Date().getTime();
+            
+            // Calculate the time remaining
+            const distance = launchDate - now;
+            
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById("days").innerHTML = days < 10 ? `0${days}` : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? `0${hours}` : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+            
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".content").innerHTML = "<h1>We are live!</h1><p>The wait is over. Explore our groundbreaking product now!</p>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
